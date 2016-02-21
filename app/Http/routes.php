@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return null;
 });
+
+Route::get('/time', 'TimeController@index');
+Route::get('/md5', 'Md5Controller@index');
+Route::get('/qr', 'QrController@index');
+Route::get('/base64', 'Base64Controller@index');
 
 /*
 |--------------------------------------------------------------------------
