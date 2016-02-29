@@ -1,27 +1,31 @@
-## Laravel PHP Framework
+##一些实用小工具
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+这是便于自己日常工作的一些查询类工具，用法简单，都是根据工具名称然后通过GET请求就能获取对应的信息，结合下面所说的方法可大大提高查询效率。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+在一些浏览器、效率工具或者mac里，譬如mac的Alfred，只要稍加设置，绑定关键字“md5”并且触发web search动作，那么当你在alfred输入“md5 lucky”，系统就会自动打开浏览器，并且访问 http://localhost/md5/?str=lucky ，于是就能看到“lucky”对应的md5值了。
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+####md5
+输出str的md5值，参数如下：
 
-## Official Documentation
+* str
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+####time
+输出某时间的时间戳和对应的格式化时间，参数如下：
 
-## Contributing
+* str
+	* 输入时间戳就返回格式化时间
+	* 支持strtotime的形式，如“2016-02-14 13:14:00”
+	* 输入形如“2016,10,8,17,56,2”就是按“年月日时分秒”的顺序返回对应时间戳
+	* 输入形如“17,56,2”就是返回当天时间的某“时分秒”对应的时间戳
+	* 不输入则返回当时的时间
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+####qr
+输出字符串对应的二维码图片，参数如下：
 
-## Security Vulnerabilities
+* str
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+####base64
+输出对应的base64加密或者解密的字符串，参数如下：
 
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+* str 要处理的字符串
+* type 输入decode是解码，不输或者输入encode等都是转码
